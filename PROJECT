@@ -1,0 +1,19 @@
+domain: chinalhr.github.io
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: sidecar-operator
+repo: github.com/ChinaLHR/sidecar-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: chinalhr.github.io
+  group: apps
+  kind: SidecarSet
+  path: github.com/ChinaLHR/sidecar-operator/api/v1alpha1
+  version: v1alpha1
+version: "3"
