@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "tomcat-pod-failure-inject"
+  namespace: test
+  labels:
+    app: "inject_failure_nginx"
+spec:
+  containers:
+    - name: tomcat-pod-failure-inject
+      image: "tomcat:jdk8-corretto"
+      resources:
+        limits:
+          cpu: 200m
+          memory: 500Mi
+        requests:
+          cpu: 100m
+          memory: 200Mi
+      ports:
+        - containerPort:  8080
+          name:  http

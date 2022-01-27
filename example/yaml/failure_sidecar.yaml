@@ -1,0 +1,11 @@
+apiVersion: apps.chinalhr.github.io/v1alpha1
+kind: SidecarSet
+metadata:
+  name: failure-sidecar
+spec:
+  selector:
+    matchLabels:
+      app: inject_failure_nginx
+  containers:
+    - name:  nginx
+      image:  nginx:1.99.6

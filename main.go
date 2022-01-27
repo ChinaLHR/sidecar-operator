@@ -85,6 +85,16 @@ func main() {
 		setupLog.Error(err, "unable to create controller", "controller", "SidecarSet")
 		os.Exit(1)
 	}
+	if err = (&appsv1alpha1.SidecarSet{}).SetupWebhookWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create webhook", "webhook", "SidecarSet")
+		os.Exit(1)
+	}
+
+	if err = (&appsv1alpha1.SidecarSet{}).Register(mgr); err != nil {
+		setupLog.Error(err, "unable to create webhook", "webhook", "Pod")
+		os.Exit(1)
+	}
+
 	//+kubebuilder:scaffold:builder
 
 	if err := mgr.AddHealthzCheck("healthz", healthz.Ping); err != nil {

@@ -1,0 +1,11 @@
+apiVersion: apps.chinalhr.github.io/v1alpha1
+kind: SidecarSet
+metadata:
+  name: nginx-sidecar
+spec:
+  selector:
+    matchLabels:
+      app: inject_nginx
+  containers:
+    - name:  nginx
+      image:  nginx:1.21.6
