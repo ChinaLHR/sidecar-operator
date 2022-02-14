@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  tomcat-deploy
+  namespace: test
+  labels:
+    app:  tomcat-deploy
+spec:
+  selector:
+    matchLabels:
+      app: tomcat-deploy
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app:  inject_nginx
+    spec:
+      containers:
+        - name:  tomcat-deploy
+          image:  tomcat:jdk8-corretto
+          # command:
+          # - "/bin/prometheus"
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 100m
+              memory: 256Mi
+          ports:
+            - containerPort:  8080
+              protocol: TCP
+              name:  http
