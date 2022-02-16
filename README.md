@@ -8,7 +8,7 @@
 
 ## Overview
 
-sidecar-operator manages sidecar in the kubernetes cluster and injects sidecar into Pod in the cluster. It is built using the [Operator SDK](https://github.com/operator-framework/operator-sdk).
+sidecar-operator manages sidecar in the kubernetes cluster and injects sidecar into Pod in the kubernetes cluster. It is built using the [Operator SDK](https://github.com/operator-framework/operator-sdk).
 
 ## Quick Start
 
@@ -40,3 +40,9 @@ make deploy IMG=*/sidecar-operator:1.0.0
 ### Create a simple SidecarSet
 
 See the yaml file in the /example/config directory.
+
+### Undeploying  the Sidecar Operator in the kubernetes cluster
+
+```bash
+make undeploy IMG=*/sidecar-operator:1.0.0
+```
