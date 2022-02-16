@@ -5,7 +5,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: inject_nginx
+      inject: nginx
   containers:
     - name:  nginx
       image:  nginx:1.21.6

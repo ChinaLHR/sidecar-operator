@@ -4,7 +4,7 @@ metadata:
   name: "tomcat-pod-inject"
   namespace: test
   labels:
-    app: "inject_nginx"
+    inject: nginx
 spec:
   containers:
   - name: tomcat-pod-inject

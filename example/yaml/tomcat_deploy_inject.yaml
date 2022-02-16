@@ -13,7 +13,8 @@ spec:
   template:
     metadata:
       labels:
-        app:  inject_nginx
+        inject: nginx
+        app: tomcat-deploy
     spec:
       containers:
         - name:  tomcat-deploy
